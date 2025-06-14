@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import AuthorInfo from "../components/AuthorInfo"; // Author Info
 
-function Login() {
+function Register() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
@@ -17,38 +17,42 @@ function Login() {
       return;
     }
 
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters");
+      return;
+    }
+
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("http://localhost:5000/api/auth/register", {
+        name,
         email,
         password,
       });
 
-      console.log("Login Response:", res.data);
-      alert("Login Successful");
-      navigate("/home");
+      alert("Registration successful! Please login.");
+      navigate("/");
     } catch (err) {
-      alert("Login Failed");
+      console.error(err);
+      alert("Error registering user");
     }
   };
 
   return (
     <div style={styles.container}>
-      {/* ✅ Top Bar: Register (left) + AuthorInfo (right) */}
-      <div style={styles.topBar}>
-        <button onClick={() => navigate("/register")} style={styles.registerBtn}>
-          Register
-        </button>
-        <div style={styles.author}>
-          <AuthorInfo />
-        </div>
-      </div>
-
       <div style={styles.card}>
-        <h2 style={styles.title}>Welcome Back!</h2>
-        <form onSubmit={handleLogin} style={styles.form}>
+        <h2 style={styles.title}>Create Account</h2>
+        <form onSubmit={handleRegister} style={styles.form}>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            style={styles.input}
+            required
+          />
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email (must be Gmail)"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={styles.input}
@@ -56,16 +60,16 @@ function Login() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Password (min 6 chars)"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={styles.input}
             required
           />
-          <button type="submit" style={styles.button}>Login</button>
+          <button type="submit" style={styles.button}>Register</button>
           <p style={styles.linkText}>
-            Forgot your password?{" "}
-            <a href="/forgot-password" style={styles.link}>Reset it</a>
+            Already have an account?{" "}
+            <a href="/" style={styles.link}>Login</a>
           </p>
         </form>
       </div>
@@ -76,35 +80,10 @@ function Login() {
 const styles = {
   container: {
     height: "100vh",
-    padding: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    position: "relative",
-  },
-  topBar: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    position: "absolute",
-    top: "20px",
-    left: "20px",
-    right: "20px",
-    alignItems: "center",
-  },
-  registerBtn: {
-    padding: "10px 16px",
-    backgroundColor: "#fff",
-    color: "#764ba2",
-    border: "none",
-    borderRadius: "8px",
-    fontWeight: "bold",
-    cursor: "pointer",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
-  },
-  author: {
-    color: "#fff",
   },
   card: {
     backgroundColor: "#fff",
@@ -113,7 +92,6 @@ const styles = {
     boxShadow: "0 15px 25px rgba(0,0,0,0.2)",
     width: "100%",
     maxWidth: "400px",
-    marginTop: "100px",
   },
   title: {
     marginBottom: "25px",
@@ -152,4 +130,4 @@ const styles = {
   },
 };
 
-export default Login;
+export default Register;

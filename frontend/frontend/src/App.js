@@ -7,8 +7,8 @@ import Home from "./pages/Home";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import AuthorInfo from "./components/AuthorInfo";
+import Register from "./components/Register"; // ✅ Correctly linked
 
-// This is where we use `useLocation`
 function AppContent() {
   const location = useLocation();
 
@@ -22,6 +22,7 @@ function AppContent() {
         <Route path="/home" element={<Home />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/register" element={<Register />} /> {/* ✅ Register route */}
       </Routes>
     </>
   );
