@@ -77,7 +77,7 @@ npm start
 
 [![Imran GitHub](https://img.shields.io/badge/GitHub-Imran788116-black?style=for-the-badge&logo=github)](https://github.com/imran788116)
 
-Made with ❤️ by **Imran Ahmed**
+Made with ❤️ by **Imran Ahmed laskar**
 
 
  
