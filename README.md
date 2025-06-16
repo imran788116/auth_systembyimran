@@ -54,10 +54,14 @@ Deploy with your preferred platforms:
 * Frontend: Vercel / Netlify
 * Backend: Render / Railway / Cyclic
 
+![Image](https://github.com/user-attachments/assets/d11389e1-bdc6-4e09-822d-eec1479a40f8)
+
+![Image](https://github.com/user-attachments/assets/641ac257-4a37-4737-a209-b18f782d9931)
 
 
+![Image](https://github.com/user-attachments/assets/8bd07fed-6c59-40db-89d9-9b21c125cf25)
 
-?????Author
+Author
 Imran Ahmed Laskar
 ??[GitHub](https://github.com/imran788116)
 ?? mdimran_ug_24@cse.nits.ac.in
