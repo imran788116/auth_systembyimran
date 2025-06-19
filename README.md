@@ -14,7 +14,6 @@ It supports login, register, forgot/reset password, and includes user dashboard 
 -  JWT Authentication  
 - ⚙ Protected Routes  
 -  Clean & Responsive UI  
-
 ---
 
 ##  Tech Stack
