@@ -10,7 +10,7 @@ router.post('/register', async (req, res) => {
     try {
         let user = await User.findOne({ email });
         if (user) {
-            return res.status(400).json({ msg: 'User already exists' });
+            return res.status(400).json({ msg: 'Email is already registered please login' });
         }
 
         user = new User({ email, password });
@@ -35,6 +35,7 @@ const crypto = require('crypto');
 
 // Forgot Password
 router.post('/forgot-password', async (req, res) => {
+    console.log("Received body:", req.body);
     const { email } = req.body;
     try {
         const user = await User.findOne({ email });
@@ -106,3 +107,5 @@ router.post('/login', async (req, res) => {
 
 
 module.exports = router;
+ 
+

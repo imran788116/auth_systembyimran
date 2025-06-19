@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +11,9 @@ function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    console.log("Register button clicked");
 
+    // Validate Gmail format
     const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     if (!emailPattern.test(email)) {
       alert("Please enter a valid Gmail address");
@@ -23,7 +26,10 @@ function Register() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      console.log("Sending to backend:", { name, email, password });
+
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/register`, {
+
         name,
         email,
         password,
@@ -32,9 +38,10 @@ function Register() {
       alert("Registration successful! Please login.");
       navigate("/");
     } catch (err) {
-      console.error(err);
-      alert("Error registering user");
-    }
+  console.error(err.response?.data || err.message);
+  alert(err.response?.data?.msg || "Error registering user");
+}
+
   };
 
   return (
@@ -66,7 +73,9 @@ function Register() {
             style={styles.input}
             required
           />
-          <button type="submit" style={styles.button}>Register</button>
+          <button type="submit" style={styles.button}>
+            Register
+          </button>
           <p style={styles.linkText}>
             Already have an account?{" "}
             <a href="/" style={styles.link}>Login</a>
@@ -131,3 +140,4 @@ const styles = {
 };
 
 export default Register;
+ 
