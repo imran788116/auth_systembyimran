@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import AuthorInfo from "../components/AuthorInfo"; // ✅ make sure this file exists
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,7 +24,6 @@ function Login() {
         { email, password }
       );
 
-      console.log("Login success:", res.data);
       alert("Login success!");
       navigate("/home");
     } catch (err) {
@@ -38,17 +36,10 @@ function Login() {
 
   return (
     <div style={styles.container}>
-      {/* Top-left Register */}
       <button onClick={() => navigate("/register")} style={styles.registerBtn}>
         Register
       </button>
 
-      {/* Top-right Author Info */}
-      <div style={styles.authorInfo}>
-        <AuthorInfo />
-      </div>
-
-      {/* Login Form */}
       <div style={styles.card}>
         <h2 style={styles.title}>Welcome Back 👋</h2>
         <form onSubmit={handleLogin} style={styles.form}>
@@ -69,7 +60,10 @@ function Login() {
           <button type="submit" style={styles.button} disabled={loading}>
             {loading ? "Logging in..." : "Login"}
           </button>
-          <p style={styles.resetLink} onClick={() => navigate("/forgot-password")}>
+          <p
+            style={styles.resetLink}
+            onClick={() => navigate("/forgot-password")}
+          >
             Forgot password?
           </p>
         </form>
@@ -142,13 +136,6 @@ const styles = {
     fontWeight: "bold",
     cursor: "pointer",
   },
-  authorInfo: {
-    position: "absolute",
-    top: "20px",
-    right: "20px",
-    color: "#fff",
-  },
 };
 
 export default Login;
- 

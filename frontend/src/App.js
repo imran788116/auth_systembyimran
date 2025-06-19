@@ -12,8 +12,12 @@ function AppContent() {
 
   return (
     <>
-      {/* Show AuthorInfo only on Login page */}
-      {location.pathname === "/" && <AuthorInfo />}
+      {/* ✅ Show AuthorInfo ONLY on the Login route */}
+      {location.pathname === "/" && (
+        <div style={styles.authorWrapper}>
+          <AuthorInfo />
+        </div>
+      )}
 
       <Routes>
         <Route path="/" element={<Login />} />
@@ -34,5 +38,13 @@ function App() {
   );
 }
 
+const styles = {
+  authorWrapper: {
+    position: "absolute",
+    top: "20px",
+    right: "20px",
+    zIndex: 999,
+  },
+};
+
 export default App;
- 
