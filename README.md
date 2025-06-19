@@ -1,23 +1,23 @@
-# ⚡ Auth System by Imran
+#  Auth System by Imran
 
 A full-stack authentication system built using **Node.js**, **Express**, **MongoDB**, and **React**.  
 It supports login, register, forgot/reset password, and includes user dashboard features like GitHub stats.
 
 ---
 
-## 🔐 Features
+## Features
 
-- ✅ User Registration & Login  
-- 🔐 Password Reset via Email  
-- 🌐 Weather Info (on Home Page)  
-- 📊 GitHub Profile Stats  
-- 🔒 JWT Authentication  
-- ⚙️ Protected Routes  
-- 🎨 Clean & Responsive UI  
+-  User Registration & Login  
+-  Password Reset via Email  
+-  Weather Info (on Home Page)  
+-  GitHub Profile Stats  
+-  JWT Authentication  
+- ⚙ Protected Routes  
+-  Clean & Responsive UI  
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend**: React  
 - **Backend**: Node.js + Express  
@@ -26,35 +26,26 @@ It supports login, register, forgot/reset password, and includes user dashboard 
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 auth_systembyimran/
 │
 ├── backend/ # Node.js backend API
-│ ├── routes/
-│ ├── controllers/
-│ ├── models/
-│ └── config/
+│ └── routes/
+│ └── controllers/
 │
 ├── frontend/ # React frontend
-│ ├── public/
 │ └── src/
-│ ├── components/
-│ │ ├── AuthorInfo.jsx
-│ │ ├── GitHubStats.jsx
-│ │ └── img/ # Contains social media icons (e.g., github.png)
+│ └── components/
 │ └── pages/
-│ ├── Login.jsx
-│ ├── Home.jsx
-│ └── ...
 │
 └── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 Clone the repository:
 
@@ -82,7 +73,7 @@ npm start
 ---
 
 
-## 🙋‍♂️ Author
+##  Author
 
 [![Imran GitHub](https://img.shields.io/badge/GitHub-Imran788116-black?style=for-the-badge&logo=github)](https://github.com/imran788116)
 
