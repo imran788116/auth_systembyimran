@@ -31,14 +31,23 @@ It supports login, register, forgot/reset password, and includes user dashboard 
 ```
 auth_systembyimran/
 │
-├── backend/           # Node.js backend API
-│   └── routes/
-│   └── controllers/
+├── backend/ # Node.js backend API
+│ ├── routes/
+│ ├── controllers/
+│ ├── models/
+│ └── config/
 │
-├── frontend/          # React frontend
-│   └── src/
-│       └── components/
-│       └── pages/
+├── frontend/ # React frontend
+│ ├── public/
+│ └── src/
+│ ├── components/
+│ │ ├── AuthorInfo.jsx
+│ │ ├── GitHubStats.jsx
+│ │ └── img/ # Contains social media icons (e.g., github.png)
+│ └── pages/
+│ ├── Login.jsx
+│ ├── Home.jsx
+│ └── ...
 │
 └── README.md
 ```
