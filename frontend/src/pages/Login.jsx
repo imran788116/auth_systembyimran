@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import AuthorInfo from "../components/AuthorInfo"; // ✅ Importing correctly
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -36,10 +37,12 @@ function Login() {
 
   return (
     <div style={styles.container}>
+      {/* Top-left Register Button */}
       <button onClick={() => navigate("/register")} style={styles.registerBtn}>
         Register
       </button>
 
+      {/* Login Card */}
       <div style={styles.card}>
         <h2 style={styles.title}>Welcome Back 👋</h2>
         <form onSubmit={handleLogin} style={styles.form}>
@@ -68,6 +71,11 @@ function Login() {
           </p>
         </form>
       </div>
+
+      {/* Bottom-center Author Info */}
+      <div style={styles.authorInfo}>
+        <AuthorInfo />
+      </div>
     </div>
   );
 }
@@ -81,6 +89,7 @@ const styles = {
     alignItems: "center",
     position: "relative",
     fontFamily: "Segoe UI, sans-serif",
+    flexDirection: "column",
   },
   card: {
     backgroundColor: "#fff",
@@ -136,6 +145,13 @@ const styles = {
     fontWeight: "bold",
     cursor: "pointer",
   },
+  authorInfo: {
+    position: "absolute",
+    bottom: "15px",
+    right: "20px",
+    color: "#fff",
+  },
 };
 
 export default Login;
+ 
