@@ -21,7 +21,7 @@ It supports login, register, forgot/reset password, and includes user dashboard 
 - **Frontend**: React  
 - **Backend**: Node.js + Express  
 - **Database**: MongoDB  
-- **Deployment**: Vercel (Frontend) + Render (Backend)  
+- **Deployment**: Render(Frontend) + Render (Backend)  
 
 ---
 
