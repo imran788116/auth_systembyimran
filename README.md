@@ -1,4 +1,4 @@
-#  Auth System by Imran
+#  Auth System
 
 A full-stack authentication system built using **Node.js**, **Express**, **MongoDB**, and **React**.  
 It supports login, register, forgot/reset password, and includes user dashboard features like GitHub stats.
